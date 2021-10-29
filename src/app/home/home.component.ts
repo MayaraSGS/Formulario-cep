@@ -2,6 +2,7 @@ import { cep } from './../model/cep';
 import { CepService } from '../cep.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,13 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class HomeComponent implements OnInit {
 
   cep = new cep();
+
+  constructor( private cepService: CepService, private router: Router) { }
+
+  ngOnInit() { window.scroll(0,0) }
+
   addressSection = new FormGroup({
-    cep: new FormControl(''),
+    cep: new FormControl('', Validators.required),
     logradouro: new FormControl(''),
     complemento: new FormControl(''),
     bairro: new FormControl(''),
@@ -20,10 +26,6 @@ export class HomeComponent implements OnInit {
     cidade: new FormControl(''),
     uf: new FormControl('')
   });
-
-  constructor( private cepService: CepService) { }
-
-  ngOnInit() { window.scroll(0,0) }
 
   async preencherForms() {
     await this.cepService.buscar(this.cep.cep);
@@ -38,6 +40,15 @@ export class HomeComponent implements OnInit {
     )
   }
 
-
+  validarCampo() {
+    if(!this.addressSection.valid) {
+      alert('Para continuar o campo CEP precisa ser preechido!!')
+      console.log('CEP vazio')
+      return;
+    } else {
+      console.log('CEP válido', this.addressSection.value)
+      this.router.navigate(['/offers'])
+    }
+  }
 
 }
