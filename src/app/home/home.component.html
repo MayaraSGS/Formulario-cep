@@ -1,0 +1,69 @@
+<div class="container">
+  <header class="header">
+    <div class="container-do-header">
+
+      <div class="logo">
+        <h3 class="a-logo">OMNIX</h3>
+      </div>
+      <div class="a-links">
+        <a routerLink="/home" class="link-home">Home</a>
+      </div>
+
+    </div>
+  </header>
+
+  <aside class="aside">
+    <div class="wrapper">
+      <form [formGroup]='addressSection' (ngSubmit)="preencherForms()">
+
+        <div class="form-group">
+
+          <div class="form-control">
+            <input type="text" formControlName="cep" id="cep" placeholder="CEP"
+              value="cep" [(ngModel)]="cep.cep">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="logradouro" id="logradouro" placeholder="Logradouro"
+              [(ngModel)]="cep.logradouro">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="complemento" id="complemento" placeholder="Complemento"
+              [(ngModel)]="cep.complemento">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="bairro" id="bairro" placeholder="Bairro" [(ngModel)]="cep.bairro">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="numero" id="numero" placeholder="numero" [(ngModel)]="cep.numero">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="cidade" id="cidade" placeholder="Cidade" [(ngModel)]="cep.cidade">
+          </div>
+
+          <div class="form-control">
+            <input type="text" formControlName="uf" id="uf" placeholder="Uf" [(ngModel)]="cep.uf">
+          </div>
+
+        </div>
+
+        <div class="center">
+          <button>Pesquisar</button>
+          <button type="submit" routerLink="/offers">Continuar</button>
+        </div>
+
+      </form>
+    </div>
+  </aside>
+
+  <main class="main"></main>
+
+  <footer class="footer">
+    <p>Created by ... © 2021</p>
+  </footer>
+
+</div>

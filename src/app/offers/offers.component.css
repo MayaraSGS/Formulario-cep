@@ -1,0 +1,444 @@
+.container{
+  display: grid;
+  grid-template-areas:
+   "header header header header header header"
+   "aside aside main main section section"
+   "btn btn btn btn btn btn"
+   "footer footer footer  footer footer footer";
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto 80vh 12vh auto auto auto;
+}
+
+/* HEADER */
+
+.header{
+  grid-area: header;
+  padding: 30px 20px 10px 30px;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(230, 90, 90);
+}
+
+.container-do-header{
+  display: grid;
+  min-width: 100%;
+  grid-template-areas:
+    "logo logo a-links a-links";
+}
+
+.logo{
+  grid-area: logo;
+}
+
+.a-logo{
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.a-links{
+  grid-area: a-links;
+  display: flex;
+  justify-content: end;
+  padding-right: 40px;
+}
+
+.link-home{
+  color: rgb(22, 22, 22);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(68, 68, 68);
+}
+
+/* ASIDE */
+
+.aside{
+  grid-area: aside;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MAIN */
+
+.main{
+  grid-area: main;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SECTION */
+
+.section{
+  grid-area: section;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BTN */
+
+.btn{
+  grid-area: btn;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.button{
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 40px;
+  padding: 5px 5rem 5px 5rem;
+  background: rgb(241, 241, 241);
+  color: #363535;
+  font-weight: bold;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Card */
+
+.wrapper{
+  min-width: 60%;
+  min-height: 60%;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  display: grid;
+  grid-template-areas:
+    "oferta"
+    "saberMais";
+}
+
+.oferta{
+  grid-area: oferta;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(228, 61, 61);
+  border-radius: 8px 8px 0 0px;
+  width: 100%;
+}
+
+.saberMais{
+  grid-area: saberMais;
+}
+
+.wrapper:hover{
+  scale: calc(+1.1);
+}
+
+.center-texto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.oferta-titulo{
+  font-size: 2.5rem;
+  color: white;
+}
+
+.preco{
+  margin-top: 3rem;
+}
+
+.btn-o{
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 4rem 10px 4rem;
+  background: rgb(187, 187, 187);
+  cursor: pointer;
+}
+
+.btn-o:hover{
+  scale: calc(+1.1);
+}
+
+/* FOOTER */
+
+.footer{
+  grid-area: footer;
+  min-width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.3px solid #222222;
+  background-color: #1b1b1b;
+}
+
+p{
+  color: white;
+}
+
+@media screen and (max-width: 640px) {
+  .container{
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+     "header header header header header header"
+     "aside aside aside main main main"
+     "section section section section section section"
+     "btn btn btn btn btn btn"
+     "footer footer footer  footer footer footer";
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto 50vh 40vh 10vh auto auto;
+  }
+
+  .section{
+    grid-area: section;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .aside .wrapper{
+    min-width: 60%;
+    min-height: 60%;
+    padding: 50px 30px 30px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .oferta{
+    grid-area: oferta;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(228, 61, 61);
+    border-radius: 8px 8px 0 0px;
+    width: 100%;
+  }
+
+  .main .wrapper{
+    min-width: 60%;
+    min-height: 60%;
+    padding: 50px 30px 30px 30px;
+    border-radius: 8px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .section .wrapper {
+    min-width: 30%;
+    min-height: 70%;
+    margin-left: 50px;
+    padding: 50px 30px 30px 30px;
+    border-radius: 8px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .button{
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 40px;
+    padding: 5px 3rem 5px 3rem;
+    background: rgb(241, 241, 241);
+    color: #363535;
+    font-weight: bold;
+    margin: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* HEADER */
+
+.header{
+  grid-area: header;
+  padding: 30px 20px 10px 30px;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container-do-header{
+  display: grid;
+  min-width: 100%;
+  grid-template-areas:
+    "logo logo a-links a-links";
+}
+
+.logo{
+  grid-area: logo;
+}
+
+.a-logo{
+  font-size: 1..4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.a-links{
+  grid-area: a-links;
+  display: flex;
+  justify-content: end;
+  padding-right: 40px;
+}
+
+.link-home{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  border-bottom: 2px solid black;
+}
+
+}
+
+@media screen and (max-width: 750px) {
+  .container{
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+     "header header header header header header"
+     "aside aside aside main main main"
+     "section section section section section section"
+     "btn btn btn btn btn btn"
+     "footer footer footer  footer footer footer";
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto 50vh 40vh 10vh auto auto;
+  }
+
+  .section{
+    grid-area: section;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .aside .wrapper{
+    min-width: 60%;
+    min-height: 60%;
+    padding: 50px 30px 30px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .main .wrapper{
+    min-width: 60%;
+    min-height: 60%;
+    padding: 50px 30px 30px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .section .wrapper {
+    min-width: 30%;
+    min-height: 70%;
+    margin-left: 0;
+    padding: 50px 30px 30px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-areas:
+    "oferta"
+    "saberMais";
+  }
+
+  .btn-o{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 40px;
+    padding: 10px 3rem 10px 3rem;
+    background: rgb(241, 241, 241);
+  }
+
+  .button{
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 40px;
+    padding: 5px 3rem 5px 3rem;
+    background: rgb(241, 241, 241);
+    color: #363535;
+    font-weight: bold;
+    margin: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .oferta-titulo{
+    font-size: 2.2rem;
+    padding: 10px;
+    color: white;
+  }
+
+  /* HEADER */
+
+.header{
+  grid-area: header;
+  padding: 30px 20px 10px 30px;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container-do-header{
+  display: grid;
+  min-width: 100%;
+  grid-template-areas:
+    "logo logo a-links a-links";
+}
+
+.logo{
+  grid-area: logo;
+}
+
+.a-logo{
+  font-size: 1..4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.a-links{
+  grid-area: a-links;
+  display: flex;
+  justify-content: end;
+  padding-right: 40px;
+}
+
+.link-home{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  border-bottom: 2px solid black;
+}
+
+
+}
